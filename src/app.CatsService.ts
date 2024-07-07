@@ -9,7 +9,7 @@ export class CatsService {
   }
 
   findOne( params: any): string {
-    return     `This action returns a #${params.id} cat`;
+    return `This action returns a #${params.id} cat`;
 
   }
   
