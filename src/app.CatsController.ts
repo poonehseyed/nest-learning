@@ -4,9 +4,13 @@ import { CatsService } from './app.CatsService';
 
 @Controller('cats')
 export class CatsController {
+    constructor(private readonly catsService: CatsService) {}
+
+
   @Get()
   findAll(): string {
-    return 'This action returns all cats';
+    return this.catsService.findAll();
+    
   }
 
 
