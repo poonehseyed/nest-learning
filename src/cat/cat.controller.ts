@@ -1,6 +1,8 @@
-import { Param } from '@nestjs/common';
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body } from '@nestjs/common';
+import {  Res, HttpStatus } from '@nestjs/common';
+import { Response } from 'express';
 import { CatsService } from './cat.service';
+import { CatDto } from './cat.dto';
 
 @Controller('cats')
 export class CatsController {
@@ -8,9 +10,9 @@ export class CatsController {
 
 
   @Get()
-  findAll(): string {
-    return this.catsService.findAll();
-    
+  async findAll(@Res() res: Response){
+ return res.status(HttpStatus.OK).json([]);
+
   }
 
 
@@ -20,5 +22,7 @@ export class CatsController {
     return this.catsService.findOne(params.id);
   }
 
-  
+
+
+
 }
