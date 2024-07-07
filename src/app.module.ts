@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { CatsController } from './app.CatsController';
-import { AppService } from './app.service';
-import { CatsService } from './app.CatsService';
+import { AppController } from './app/app.controller';
+import { CatsController } from './cat/cat.controller';
+import { AppService } from './app/app.service';
+import { CatsService } from './cat/cat.service';
 
 
 @Module({
