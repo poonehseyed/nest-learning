@@ -11,15 +11,16 @@ export class CatsController {
 
   @Get()
   async findAll(@Res() res: Response){
- return res.status(HttpStatus.OK).json([]);
+    
+ return res.status(HttpStatus.OK).json(this.catsService.findAll());
 
   }
 
 
   @Get(':id')
-  findOne(@Param() params: any): string {
-    console.log(params.id);
-    return this.catsService.findOne(params.id);
+  findOne(@Param('id') id: number): CatDto {
+    console.log(id);
+    return this.catsService.findOne(+id);
   }
 
 
